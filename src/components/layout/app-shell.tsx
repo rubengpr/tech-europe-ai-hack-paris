@@ -33,6 +33,16 @@ export function AppShell({ children }: AppShellProps) {
   return (
     <main className="flex h-screen overflow-hidden bg-slate-950 text-slate-950">
       <nav className="flex w-16 shrink-0 flex-col items-center border-r border-slate-200 bg-slate-50 py-4">
+        <div
+          className="mb-5 grid h-10 w-10 place-items-center rounded-md border border-slate-200 bg-white shadow-sm"
+          aria-label="Almond"
+        >
+          <img
+            src="/icon-192.png"
+            alt=""
+            className="h-7 w-7 rounded-md"
+          />
+        </div>
         <div className="flex flex-1 flex-col gap-3">
           {navItems.map((item) => {
             const Icon = item.icon;

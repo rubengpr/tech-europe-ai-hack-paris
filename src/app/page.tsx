@@ -1,83 +1,84 @@
-import { AssistantPanel } from "@/components/assistant/assistant-panel";
-import { ParcelCard } from "@/components/parcels/parcel-card";
-import { MetricCard } from "@/components/ui/metric-card";
-import { getDemoFarmer } from "@/lib/services/farmers";
-import { listParcels } from "@/lib/services/parcels";
-import { formatHectares } from "@/lib/utils/format";
+import Link from "next/link";
+import { ArrowUpRight, Bell, Map, Volume2 } from "lucide-react";
 
-export default async function Home() {
-  const [farmer, parcels] = await Promise.all([getDemoFarmer(), listParcels()]);
-  const totalAreaHa = parcels.reduce((sum, parcel) => sum + parcel.areaHa, 0);
-  const attentionCount = parcels.filter(
-    (parcel) => parcel.status === "needs-attention",
-  );
+const features = [
+  {
+    icon: Map,
+    title: "Live parcel map",
+    text: "See every parcel in one map with the latest field, weather, and sensor data.",
+  },
+  {
+    icon: Volume2,
+    title: "Daily voice briefing",
+    text: "Hear the most important farm events each morning, summarized by AI voice.",
+    chip: "AI-powered",
+  },
+  {
+    icon: Bell,
+    title: "Official alerts",
+    text: "Get urgent warnings from official sources without checking their websites every week.",
+    chip: "AI-powered",
+  },
+];
 
+export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      <section className="mx-auto grid w-full max-w-7xl gap-6 px-5 py-6 lg:grid-cols-[1fr_420px] lg:px-8">
-        <div className="space-y-6">
-          <header className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-            <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-700">
-                  ParcelOps AI
-                </p>
-                <h1 className="mt-3 text-3xl font-semibold tracking-normal text-slate-950 md:text-4xl">
-                  Farm intelligence dashboard
-                </h1>
-                <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
-                  Simple parcel readiness for {farmer.name} at{" "}
-                  {farmer.farmName}.
-                </p>
-              </div>
-              <div className="rounded-md bg-slate-950 px-4 py-3 text-sm text-white">
-                Demo farm · {farmer.region}
-              </div>
-            </div>
-          </header>
+    <main className="landing-serif relative min-h-screen overflow-hidden bg-[#f8f7f2] text-[#11120f]">
+      <div className="landing-starfield" aria-hidden="true" />
+      <section className="relative mx-auto flex min-h-screen max-w-[1280px] flex-col items-center justify-center overflow-hidden px-6 py-12 text-center lg:px-10">
+        <h1 className="relative z-10 max-w-full text-5xl font-medium leading-[0.98] tracking-normal md:text-7xl lg:whitespace-nowrap lg:text-[76px] xl:text-[84px]">
+          Run your farm like it&apos;s{" "}
+          <span className="text-[#2f6f3e]">2044</span>
+        </h1>
 
-          <section className="grid gap-4 md:grid-cols-3">
-            <MetricCard
-              detail="Real RPG parcel boundaries"
-              label="Parcels"
-              value={String(farmer.parcelsCount)}
-            />
-            <MetricCard
-              detail="Across demo fields"
-              label="Total area"
-              value={formatHectares(totalAreaHa)}
-            />
-            <MetricCard
-              detail="Need a closer look"
-              label="Attention"
-              value={String(attentionCount.length)}
-            />
-          </section>
+        <p className="relative z-10 mt-8 max-w-3xl text-xl leading-8 text-[#4f5149] md:text-2xl">
+          Almond turns parcel data into clear daily decisions for farmers.
+        </p>
 
-          <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-            <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-              <div>
-                <h2 className="text-2xl font-semibold text-slate-950">
-                  Parcel overview
+        <Link
+          href="/map"
+          className="group relative z-10 mt-10 inline-flex items-center gap-3 rounded-full bg-[#11120f] px-7 py-4 text-base font-semibold text-white transition hover:bg-[#2a2c26]"
+        >
+          Open farm demo
+          <span className="flex size-7 items-center justify-center rounded-full bg-white text-[#11120f] transition duration-300 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:rotate-12">
+            <ArrowUpRight className="size-4 transition duration-300 ease-out group-hover:scale-110" aria-hidden="true" />
+          </span>
+        </Link>
+
+        <div className="relative z-10 mt-16 grid w-full gap-3 text-left md:grid-cols-3">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+
+            return (
+              <article
+                key={feature.title}
+                className="rounded-[8px] border border-[#11120f]/10 bg-[#fbfaf6]/72 p-6 backdrop-blur-sm"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="flex size-10 items-center justify-center rounded-full border border-[#11120f]/10 bg-white/70 text-[#2f6f3e]">
+                    <Icon className="size-5" aria-hidden="true" />
+                  </span>
+                  <div className="flex items-center gap-2">
+                    {feature.chip ? (
+                      <span className="rounded-full border border-[#2f6f3e]/15 bg-[#2f6f3e]/8 px-3 py-1 text-xs font-semibold text-[#2f6f3e]">
+                        {feature.chip}
+                      </span>
+                    ) : null}
+                    <p className="text-sm font-semibold text-[#2f6f3e]">
+                      0{index + 1}
+                    </p>
+                  </div>
+                </div>
+                <h2 className="mt-8 text-2xl font-medium leading-tight">
+                  {feature.title}
                 </h2>
-                <p className="mt-2 text-sm leading-6 text-slate-600">
-                  Each parcel shows only the basics needed for the demo: name,
-                  hectares, and whether it needs attention.
+                <p className="mt-4 text-base leading-7 text-[#56584f]">
+                  {feature.text}
                 </p>
-              </div>
-            </div>
-
-            <div className="mt-5 grid gap-4 xl:grid-cols-3">
-              {parcels.map((parcel) => (
-                <ParcelCard key={parcel.id} parcel={parcel} />
-              ))}
-            </div>
-          </section>
+              </article>
+            );
+          })}
         </div>
-
-        <aside className="lg:sticky lg:top-6 lg:self-start">
-          <AssistantPanel parcels={parcels} />
-        </aside>
       </section>
     </main>
   );

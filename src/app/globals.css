@@ -8,14 +8,14 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: Arial, Helvetica, sans-serif;
+  --font-sans: Aptos, "Segoe UI", Helvetica, sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Aptos, "Segoe UI", Helvetica, sans-serif;
 }
 
 button,
@@ -23,4 +23,42 @@ input,
 select,
 textarea {
   font: inherit;
+}
+
+.landing-serif {
+  font-family:
+    "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+.landing-starfield {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.34;
+  background:
+    linear-gradient(rgba(248, 247, 242, 0.08), rgba(248, 247, 242, 0.28)),
+    url("/almond-starfield.svg") center / 100% 100% no-repeat;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.landing-starfield::after {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(248, 247, 242, 0.7) 0%,
+    rgba(248, 247, 242, 0.56) 34%,
+    rgba(248, 247, 242, 0.22) 68%,
+    rgba(248, 247, 242, 0.04) 100%
+  );
+  content: "";
+}
+
+@media (max-width: 767px) {
+  .landing-starfield {
+    opacity: 0.24;
+  }
 }

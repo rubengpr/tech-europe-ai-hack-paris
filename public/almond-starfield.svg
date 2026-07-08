@@ -1,0 +1,117 @@
+<svg width="2048" height="1024" viewBox="0 0 2048 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <symbol id="star" viewBox="-8 -8 16 16">
+      <path d="M0 -7 C0.8 -2.1 2.1 -0.8 7 0 C2.1 0.8 0.8 2.1 0 7 C-0.8 2.1 -2.1 0.8 -7 0 C-2.1 -0.8 -0.8 -2.1 0 -7Z" fill="currentColor"/>
+    </symbol>
+    <radialGradient id="clusterA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(700 170) rotate(90) scale(380 700)">
+      <stop stop-color="white"/>
+      <stop offset="0.2" stop-color="white" stop-opacity="0.92"/>
+      <stop offset="0.7" stop-color="white" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="white" stop-opacity="0.08"/>
+    </radialGradient>
+    <radialGradient id="clusterB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1880 250) rotate(90) scale(330 460)">
+      <stop stop-color="white"/>
+      <stop offset="0.25" stop-color="white" stop-opacity="0.88"/>
+      <stop offset="1" stop-color="white" stop-opacity="0.1"/>
+    </radialGradient>
+    <radialGradient id="clusterC" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(250 860) rotate(90) scale(300 470)">
+      <stop stop-color="white"/>
+      <stop offset="0.24" stop-color="white" stop-opacity="0.86"/>
+      <stop offset="1" stop-color="white" stop-opacity="0.08"/>
+    </radialGradient>
+    <radialGradient id="fadeCenter" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1024 500) rotate(90) scale(430 850)">
+      <stop stop-color="black" stop-opacity="0.05"/>
+      <stop offset="0.42" stop-color="black" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="black"/>
+    </radialGradient>
+    <mask id="fieldMask">
+      <rect width="2048" height="1024" fill="url(#fadeCenter)"/>
+      <rect width="2048" height="1024" fill="url(#clusterA)"/>
+      <rect width="2048" height="1024" fill="url(#clusterB)"/>
+      <rect width="2048" height="1024" fill="url(#clusterC)"/>
+    </mask>
+  </defs>
+  <g color="#2f8b6a" mask="url(#fieldMask)" opacity="0.86">
+    <g id="row">
+      <use href="#star" x="20" y="0" width="9" height="9"/>
+      <use href="#star" x="58" y="0" width="11" height="11"/>
+      <use href="#star" x="96" y="0" width="8" height="8"/>
+      <use href="#star" x="134" y="0" width="13" height="13"/>
+      <use href="#star" x="172" y="0" width="7" height="7"/>
+      <use href="#star" x="210" y="0" width="15" height="15"/>
+      <use href="#star" x="248" y="0" width="10" height="10"/>
+      <use href="#star" x="286" y="0" width="12" height="12"/>
+      <use href="#star" x="324" y="0" width="8" height="8"/>
+      <use href="#star" x="362" y="0" width="14" height="14"/>
+      <use href="#star" x="400" y="0" width="9" height="9"/>
+      <use href="#star" x="438" y="0" width="12" height="12"/>
+      <use href="#star" x="476" y="0" width="7" height="7"/>
+      <use href="#star" x="514" y="0" width="14" height="14"/>
+      <use href="#star" x="552" y="0" width="10" height="10"/>
+      <use href="#star" x="590" y="0" width="13" height="13"/>
+      <use href="#star" x="628" y="0" width="8" height="8"/>
+      <use href="#star" x="666" y="0" width="15" height="15"/>
+      <use href="#star" x="704" y="0" width="10" height="10"/>
+      <use href="#star" x="742" y="0" width="12" height="12"/>
+      <use href="#star" x="780" y="0" width="8" height="8"/>
+      <use href="#star" x="818" y="0" width="14" height="14"/>
+      <use href="#star" x="856" y="0" width="9" height="9"/>
+      <use href="#star" x="894" y="0" width="12" height="12"/>
+      <use href="#star" x="932" y="0" width="7" height="7"/>
+      <use href="#star" x="970" y="0" width="14" height="14"/>
+      <use href="#star" x="1008" y="0" width="10" height="10"/>
+      <use href="#star" x="1046" y="0" width="13" height="13"/>
+      <use href="#star" x="1084" y="0" width="8" height="8"/>
+      <use href="#star" x="1122" y="0" width="15" height="15"/>
+      <use href="#star" x="1160" y="0" width="10" height="10"/>
+      <use href="#star" x="1198" y="0" width="12" height="12"/>
+      <use href="#star" x="1236" y="0" width="8" height="8"/>
+      <use href="#star" x="1274" y="0" width="14" height="14"/>
+      <use href="#star" x="1312" y="0" width="9" height="9"/>
+      <use href="#star" x="1350" y="0" width="12" height="12"/>
+      <use href="#star" x="1388" y="0" width="7" height="7"/>
+      <use href="#star" x="1426" y="0" width="14" height="14"/>
+      <use href="#star" x="1464" y="0" width="10" height="10"/>
+      <use href="#star" x="1502" y="0" width="13" height="13"/>
+      <use href="#star" x="1540" y="0" width="8" height="8"/>
+      <use href="#star" x="1578" y="0" width="15" height="15"/>
+      <use href="#star" x="1616" y="0" width="10" height="10"/>
+      <use href="#star" x="1654" y="0" width="12" height="12"/>
+      <use href="#star" x="1692" y="0" width="8" height="8"/>
+      <use href="#star" x="1730" y="0" width="14" height="14"/>
+      <use href="#star" x="1768" y="0" width="9" height="9"/>
+      <use href="#star" x="1806" y="0" width="12" height="12"/>
+      <use href="#star" x="1844" y="0" width="7" height="7"/>
+      <use href="#star" x="1882" y="0" width="14" height="14"/>
+      <use href="#star" x="1920" y="0" width="10" height="10"/>
+      <use href="#star" x="1958" y="0" width="13" height="13"/>
+      <use href="#star" x="1996" y="0" width="8" height="8"/>
+    </g>
+    <use href="#row" y="18" opacity="0.34"/>
+    <use href="#row" y="56" opacity="0.54"/>
+    <use href="#row" y="94" opacity="0.86"/>
+    <use href="#row" y="132" opacity="0.72"/>
+    <use href="#row" y="170" opacity="0.48"/>
+    <use href="#row" y="208" opacity="0.66"/>
+    <use href="#row" y="246" opacity="0.44"/>
+    <use href="#row" y="284" opacity="0.58"/>
+    <use href="#row" y="322" opacity="0.82"/>
+    <use href="#row" y="360" opacity="0.5"/>
+    <use href="#row" y="398" opacity="0.42"/>
+    <use href="#row" y="436" opacity="0.62"/>
+    <use href="#row" y="474" opacity="0.74"/>
+    <use href="#row" y="512" opacity="0.45"/>
+    <use href="#row" y="550" opacity="0.36"/>
+    <use href="#row" y="588" opacity="0.58"/>
+    <use href="#row" y="626" opacity="0.8"/>
+    <use href="#row" y="664" opacity="0.44"/>
+    <use href="#row" y="702" opacity="0.34"/>
+    <use href="#row" y="740" opacity="0.48"/>
+    <use href="#row" y="778" opacity="0.64"/>
+    <use href="#row" y="816" opacity="0.84"/>
+    <use href="#row" y="854" opacity="0.72"/>
+    <use href="#row" y="892" opacity="0.56"/>
+    <use href="#row" y="930" opacity="0.38"/>
+    <use href="#row" y="968" opacity="0.26"/>
+  </g>
+</svg>

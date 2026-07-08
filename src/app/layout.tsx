@@ -3,7 +3,7 @@ import "leaflet/dist/leaflet.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ParcelOps AI",
+  title: "Almond",
   description: "A hackathon prototype for farmer parcel intelligence.",
 };
 

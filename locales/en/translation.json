@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "title": "Trail Running Cal",
+    "description": "A focused calendar for trail and mountain races in Catalonia."
+  },
+  "home": {
+    "eyebrow": "Trail Running Calendar",
+    "title": "Find trail and mountain races across Catalonia.",
+    "description": "Browse a focused race calendar for Barcelona, Girona, Lleida, and Tarragona, built for runners who care about terrain, distance, and elevation.",
+    "stats": [
+      {
+        "value": "4",
+        "label": "Catalan provinces"
+      },
+      {
+        "value": "100%",
+        "label": "Trail focused"
+      },
+      {
+        "value": "0",
+        "label": "Road races"
+      }
+    ],
+    "featuredTitle": "Featured races",
+    "featuredDescription": "Starter data is wired through the service and database layers so the page, API, and future clients share the same domain model.",
+    "raceLabels": {
+      "distance": "Distance",
+      "elevationGain": "Elevation gain",
+      "province": "Province"
+    }
+  },
+  "errors": {
+    "default": "Something went wrong."
+  }
+}

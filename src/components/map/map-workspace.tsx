@@ -1,14 +1,15 @@
 "use client";
 
 import {
-  CalendarDays,
   ChevronDown,
   CircleCheck,
   CloudRain,
+  Tractor,
   TriangleAlert,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { useCallback, useMemo, useState } from "react";
+import { DailyBriefingCard } from "@/components/daily-briefing/daily-briefing-card";
 import { ParcelMap } from "@/components/map/parcel-map";
 import { CropIcon } from "@/components/parcels/crop-icon";
 import { ParcelInfoChip } from "@/components/parcels/parcel-info-chip";
@@ -22,9 +23,12 @@ import {
   formatHectares,
 } from "@/lib/utils/format";
 import type { Parcel, ParcelStatus } from "@/types/parcel";
+import type { WeatherBriefing } from "@/types/weather";
+import { WeatherSidebarSection } from "@/components/weather/weather-sidebar-section";
 
 type MapWorkspaceProps = {
   parcels: Parcel[];
+  weather: WeatherBriefing;
 };
 
 const statusIcons: Record<ParcelStatus, LucideIcon> = {
@@ -32,9 +36,9 @@ const statusIcons: Record<ParcelStatus, LucideIcon> = {
   "needs-attention": TriangleAlert,
 };
 
-export function MapWorkspace({ parcels }: MapWorkspaceProps) {
+export function MapWorkspace({ parcels, weather }: MapWorkspaceProps) {
   const [selectedParcelId, setSelectedParcelId] = useState(parcels[0]?.id ?? "");
-  const [isParcelListOpen, setIsParcelListOpen] = useState(true);
+  const [isParcelListOpen, setIsParcelListOpen] = useState(false);
   const selectedParcel = useMemo(
     () =>
       parcels.find((parcel) => parcel.id === selectedParcelId) ??
@@ -57,6 +61,9 @@ export function MapWorkspace({ parcels }: MapWorkspaceProps) {
   return (
     <>
       <aside className="flex w-[390px] shrink-0 flex-col overflow-y-auto border-r border-slate-200 bg-white">
+        <WeatherSidebarSection weather={weather} />
+        <DailyBriefingCard />
+
         <section className="border-b border-slate-200 px-6 py-5">
           <div>
             <div className="flex items-center gap-3">
@@ -84,7 +91,7 @@ export function MapWorkspace({ parcels }: MapWorkspaceProps) {
               value={`${selectedParcel.rainfallMmNext48h} mm`}
             />
             <KpiRow
-              icon={CalendarDays}
+              icon={Tractor}
               label="Harvest"
               value={formatExpectedHarvestDate(selectedParcel.harvestDays)}
             />
@@ -172,7 +179,7 @@ function KpiRow({
       className={`flex items-center justify-between gap-4 rounded-md border px-4 py-3 ${className}`}
     >
       <span className="flex items-center gap-2 text-sm font-medium opacity-75">
-        <Icon aria-hidden="true" className="h-4 w-4 shrink-0" />
+        <Icon aria-hidden="true" className="h-4 w-4 shrink-0" strokeWidth={2.5} />
         {label}
       </span>
       <span className="text-sm font-semibold">{value}</span>

@@ -5,7 +5,7 @@ const demoFarmer: Farmer = {
   name: "Claire Martin",
   farmName: "Ferme du Plateau",
   region: "Ile-de-France",
-  parcelsCount: 4,
+  parcelsCount: 3,
 };
 
 export async function getFarmer() {
