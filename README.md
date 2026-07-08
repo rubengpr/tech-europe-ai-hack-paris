@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Robbie
 
-## Getting Started
+AI-powered parcel intelligence prototype built during the Tech Europe Paris AI Hackathon.
 
-First, run the development server:
+Robbie helps a demo farmer understand what is happening across their land parcels by combining parcel data, weather, public updates, and AI-generated explanations in one dashboard.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## AI Capabilities
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Parcel assistant:** answers questions about parcel status, risks, weather, crops, and recommended next actions.
+- **AI summaries:** turns mixed parcel signals into short, farmer-friendly explanations.
+- **Voice flow with SLNG:** uses SLNG as a speech-to-text-to-speech layer so the assistant can support spoken briefings and voice-style interactions.
+- **Web/document intelligence with Tavily:** uses Tavily to search the internet, find relevant public documents or official updates, and return useful structured context.
+- **Briefing generation:** creates concise daily-style summaries from parcel, weather, public document, and restriction data.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Hackathon Context
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This was built as a fast prototype for the Tech Europe Paris AI Hackathon. The focus was a clear demo: show how AI can help farmers move from scattered agricultural data to practical decisions.
 
-## Learn More
+Some data is mocked or simplified where real integrations would have slowed down the hackathon build.
 
-To learn more about Next.js, take a look at the following resources:
+## Data Represented
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Parcel and crop data
+- Weather signals
+- Water restriction information
+- Public documents and official updates
+- Satellite, sensor, and drone-style observations
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tech Stack
 
-## Deploy on Vercel
+- Next.js
+- TypeScript
+- React
+- Tailwind CSS
+- OpenAI
+- SLNG
+- Tavily
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Status
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Hackathon prototype preserved as a snapshot of the project built in Paris.
